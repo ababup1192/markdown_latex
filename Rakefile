@@ -8,7 +8,7 @@ task :build do
     `pandoc #{md} -o #{tex}`
   }
 
-  #puts `bibtex #{name}.aux`
+  puts `platex -kanji=UTF8 src/#{name}.tex`
   puts `platex -kanji=UTF8 src/#{name}.tex`
   puts `dvipdfmx #{name}.dvi`
   puts `mv #{name}.pdf build/`
